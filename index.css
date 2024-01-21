@@ -18,6 +18,10 @@ body {
     text-align: left;
 }
 
+#colorPicker-container {
+    margin-bottom: auto;
+}
+
 #container {
     display: grid;
     width: 500px;
@@ -31,16 +35,18 @@ body {
 .grid-square {
     box-sizing: border-box;
     height: 30px;
-    background-color: var(--color-selected);
+    /*background-color: var(--color-selected);*/
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin: 0px;
     padding: 0px;
-
 }
 
 .grid-square:hover {
-    background-color: black;
+    background-color: var(--selected-color);
+    transition: background-color 0.3s ease;
+    
 }
+
 
 .footer-container {
     background-color: #333;
