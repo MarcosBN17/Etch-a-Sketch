@@ -36,15 +36,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid black;
 }
 
-.sidebox label,
-.sidebox button {
+.sidebox label {
     margin-bottom: 10px;
 }
 
+
 .sidebox input {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 #container {
