@@ -39,19 +39,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid black;
 }
 
 .sidebox label {
+<<<<<<< HEAD
     margin-bottom: 10px;
 }
 
 .sidebox button {
+=======
+>>>>>>> 9dabc66f9cb7b0a685159429b6b3bf84eee16dfc
     margin-bottom: 10px;
 }
+
 
 .sidebox input {
     margin-bottom: 10px;
     border-radius: 5px;
+<<<<<<< HEAD
     border: 1px solid black;
 }
 
@@ -62,6 +68,9 @@ body {
     align-items: center;
     margin-top: 5%;
     margin-bottom: 2%;
+=======
+    border: 1px solid #ccc;
+>>>>>>> 9dabc66f9cb7b0a685159429b6b3bf84eee16dfc
 }
 
 #container {

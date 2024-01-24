@@ -73,7 +73,10 @@ document.addEventListener('DOMContentLoaded', function() {
     clearbutton.addEventListener('click', function() {
         const squares = document.querySelectorAll('.grid-square');
         squares.forEach(square => {
+<<<<<<< HEAD
             square.style.backgroundColor = '';
+=======
+>>>>>>> 9dabc66f9cb7b0a685159429b6b3bf84eee16dfc
             square.style.backgroundColor = 'transparent';
             square.style.transition = 'background-color 0.5s ease';
         });
