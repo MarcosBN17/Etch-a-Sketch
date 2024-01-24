@@ -29,11 +29,21 @@ document.addEventListener('DOMContentLoaded', function() {
     clearButton.setAttribute('id', 'clearButton');
     clearButton.textContent = 'Clear';
 
+    //Create slide
+    const gridSlide = document.createElement('input');
+    gridSlide.setAttribute('type', 'range');
+    gridSlide.setAttribute('min', '1');
+    gridSlide.setAttribute('max', '64');
+    gridSlide.setAttribute('value', '18');
+    gridSlide.setAttribute('class', 'input-slider');
+    gridSlide.setAttribute('id', 'slider');
+
     //Append elements to sidebox div
     sidebox.appendChild(heading);
     sidebox.appendChild(label);
     sidebox.appendChild(colorPicker);
     sidebox.appendChild(clearButton);
+    sidebox.appendChild(gridSlide);
 
     //Append sidebox to wrapper div
     wrapper.appendChild(sidebox);
@@ -51,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //Container div
     const colorpicker = document.getElementById('colorPicker');
     const clearbutton = document.getElementById('clearButton');
+    const slider = document.getElementById('slider');
 
     // Color Picker function
     colorpicker.addEventListener('input', function() {
@@ -63,12 +74,37 @@ document.addEventListener('DOMContentLoaded', function() {
         const squares = document.querySelectorAll('.grid-square');
         squares.forEach(square => {
             square.style.backgroundColor = '';
+            square.style.backgroundColor = 'transparent';
+            square.style.transition = 'background-color 0.5s ease';
         });
     });
 
+    slider.addEventListener("change", () => {
+        let squares = slider.value;
+
+        container.innerHTML = "";
+
+        container.style.gridTemplateRows = `repeat(${squares}, 1fr)`;
+        container.style.gridTemplateColumns = `repeat(${squares}, 1fr)`;
+
+        for (let i = 0; i < (squares * squares); i++) {
+            let square = document.createElement('div');
+            square.classList.add("grid-square");
+
+            //Add event listener for hover effect
+            square.addEventListener('mouseover', function() {
+                square.style.backgroundColor = document.documentElement.style.getPropertyValue('--selected-color');
+
+            });
+            container.appendChild(square);
+        }
+    });
+
+       /*   
     // 16x16 grid of square divs
     for (let i = 0; i < 16; i++) {
         for (let j = 0; j < 16; j++) {
+    
             // Create new div element
             let square = document.createElement('div');
 
@@ -83,6 +119,9 @@ document.addEventListener('DOMContentLoaded', function() {
             container.appendChild(square);
         }
     }
+    */
+    
+    
 
     // Retrieve the placeholder and append the footer container
     const footerContainer = document.createElement('div');

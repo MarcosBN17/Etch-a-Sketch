@@ -4,6 +4,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
 }
 
 .wrapper {
@@ -38,13 +41,27 @@ body {
     align-items: center;
 }
 
-.sidebox label,
+.sidebox label {
+    margin-bottom: 10px;
+}
+
 .sidebox button {
     margin-bottom: 10px;
 }
 
 .sidebox input {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.slidebox .slide-container {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
 }
 
 #container {
@@ -52,17 +69,11 @@ body {
     width: 500px;
     height: 500px;
     gap: 1px;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
     border: 1px solid black;
 }
 
 .grid-square {
-    box-sizing: border-box;
-    height: 30px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin: 0px;
-    padding: 0px;
 }
 
 .grid-square:hover {
