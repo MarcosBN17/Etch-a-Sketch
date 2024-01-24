@@ -4,6 +4,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
 }
 
 .wrapper {
@@ -27,7 +30,7 @@ body {
 
 .sidebox {
     width: 150px;
-    height: 150px;
+    height: 200px;
     padding: 40px;
     margin: 20px;
     margin-top: 125px;
@@ -39,15 +42,41 @@ body {
     border: 1px solid black;
 }
 
-.sidebox label {
-    margin-bottom: 10px;
+.sidebox h2 {
+    margin-top: 10px;
 }
 
+.sidebox label[for="colorPicker"] {
+    margin: 5px;
+}
+
+.sidebox button {
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.sidebox label[for="slider"] {
+    margin: 10px;
+}
+
+.sidebox input[type="color"] {
+    margin: 10px;
+    padding: 5px;
+}
 
 .sidebox input {
     margin-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
+}
+
+.slidebox .slide-container {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
 }
 
 #container {
@@ -55,17 +84,11 @@ body {
     width: 500px;
     height: 500px;
     gap: 1px;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
     border: 1px solid black;
 }
 
 .grid-square {
-    box-sizing: border-box;
-    height: 30px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin: 0px;
-    padding: 0px;
 }
 
 .grid-square:hover {
@@ -81,4 +104,3 @@ body {
     width: 100%;
     margin-bottom: auto;
 }
-
